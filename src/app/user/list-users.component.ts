@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {} from '../Models/User';
 import { User } from '../Models/User/User.Model';
 
@@ -8,6 +8,8 @@ import { User } from '../Models/User/User.Model';
   styleUrls: ['./list-users.component.css']
 })
 export class ListUsersComponent implements OnInit {
+@Input()
+userName : string;
 
 users :User[] = 
 [

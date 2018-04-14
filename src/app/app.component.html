@@ -1,13 +1,22 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
+<div class="container">
+  <div class="row">
+    <div class="col" style="text-align:center; background-color: aqua">
+      <h5>
+        Welcome to {{ title }}!
+      </h5>
+    </div>
   </div>
-  <div class="container">
-  <app-list-users></app-list-users>
 </div>
-
-
-
-
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <app-header></app-header>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <app-list-users [userName]="title"></app-list-users>
+    </div>
+  </div>
+</div>
