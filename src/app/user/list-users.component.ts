@@ -30,7 +30,7 @@ users :User[] =
     email:'Mary@abc.com',
     contactNumber: 2345978640,
     dateOfBirth: new Date('11/20/1979'),
-    isActive: true,
+    isActive: false,
     photoPath: 'assets/images/mary.png'
   },
   {
@@ -41,7 +41,7 @@ users :User[] =
     email:'John@bkc.com',
     contactNumber: 5432978640,
     dateOfBirth: new Date('3/25/1976'),
-    isActive: false,
+    isActive: true,
     photoPath: 'assets/images/john.png'
   }
 ];
