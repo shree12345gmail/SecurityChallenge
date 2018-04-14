@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+/*Router */
+import { RouterModule, Routes } from '@angular/router';
+/*Router */
 
 import { AppComponent } from './app.component';
 
@@ -15,6 +18,13 @@ import { CreateUserComponent } from './user/create-user.component';
 /*User Component */
 
 
+const routes: Routes = [
+  {path: 'Listuser',component: ListUsersComponent},
+  {path: 'createuser',component: CreateUserComponent},
+  {path: '',component: ListUsersComponent, pathMatch:'full'},
+  {path: '**',component: ListUsersComponent},
+];
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,8 +34,10 @@ import { CreateUserComponent } from './user/create-user.component';
     CreateUserComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(routes)
   ],
+  exports : [RouterModule],
   providers: [],
   bootstrap: [AppComponent]
 })
