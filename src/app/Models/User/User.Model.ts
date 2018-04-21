@@ -8,4 +8,5 @@ export class User{
     dateOfBirth:Date;
     isActive:boolean;
     photoPath:string;
+    profession:string;
 }

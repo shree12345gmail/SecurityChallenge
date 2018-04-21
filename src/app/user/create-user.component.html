@@ -1,3 +1,71 @@
-<p>
-  create-user works!
-</p>
+<form #userForm="ngForm" (ngSubmit)="saveUser(userForm)">
+  <div class="card">
+    <div class="card-header bg-info">
+      Create User
+    </div>
+    <div class="card-body">
+      <div class="form-group">
+        <label for="firstName">Full Name</label>
+        <div class="row">
+          <div class="col-sm-6">
+            <input type="text" id="firstName" class="form-control" placeholder="First Name" name="firstName" [(ngModel)]="firstName">
+          </div>
+          <div class="col-sm-6">
+            <input type="text" id="LastName" class="form-control" placeholder="Last Name" name="LastName" [(ngModel)]="LastName">
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="gender">Gender</label>
+        <div class="form-control">
+          <label class="radio-inline">
+            <input type="radio" value="male" name="gender" [(ngModel)]="gender"> Male
+          </label>
+          <label class="radio-inline">
+            <input type="radio" value="female" name="gender" [(ngModel)]="gender"> Female
+          </label>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email">email</label>
+        <input type="text" id="email" class="form-control" name="email" [(ngModel)]="email">
+      </div>
+      <div class="form-group">
+        <label for="contactNumber">Contact Number</label>
+        <input type="text" id="contactNumber" class="form-control" name="contactNumber" [(ngModel)]="contactNumber">
+      </div>
+      <div class="form-group">
+        <label for="dateOfBirth">Date of Birth</label>
+        <input type="date" id="dateOfBirth" class="form-control" name="dateOfBirth" [(ngModel)]="dateOfBirth">
+      </div>
+      <div class="form-group">
+        <div class="form-control">
+          <label for="isActive" class="checkbox-inline">
+            <input type="checkbox" id="isActive" name="isActive" [(ngModel)]="isActive"> Is Active</label>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="profession">
+          Profession
+        </label>
+        <!--<select name="profession" id="profession" [(ngModel)]="profession" class="form-control">
+          <option value="1">Salaried</option>
+          <option value="2">Businessman</option>
+        </select>
+
+      -->
+      <select name="profession" id="profession" [(ngModel)]="profession" class="form-control">
+        <option *ngFor="let prof of professions" [value]="prof.id">{{prof.name}}</option>
+      </select>
+      </div>
+      <div class="form-group">
+        <label for="photoPath" class="checkbox-inline">Photo</label>
+        <input type="text" id="photoPath" class="form-control" name="photoPath" [(ngModel)]="photoPath">
+      </div>
+    </div>
+    <div class="card-footer bg-transparent" style="right: 0%">
+      <button type="submit" class="btn btn-primary">Save</button>
+    </div>
+  </div>
+</form>
+{{userForm.value | json}}
